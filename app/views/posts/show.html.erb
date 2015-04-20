@@ -1,0 +1,21 @@
+
+
+<div class="cols"
+<h1 class="bg-success"><%= @post.title %></h1>
+<p class="bg-info"><%= @post.body %></p>
+<p class="bg-info"><%= @post.date_published %></p>
+<% @post.comments.each do |comment| %>
+<%= comment.body %>
+<% end %>
+<div class="container">
+<%= link_to "All posts", posts_path, class: "btn btn-warning btn-sm" %>
+</div>
+
+
+
+<%= form_for ([@post, @comment]) do |f| %>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+    <br>
+    <%= f.submit %>
+<% end %>

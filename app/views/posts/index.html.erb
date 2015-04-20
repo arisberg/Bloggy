@@ -1,0 +1,13 @@
+<h1>Claude's Blog</h1>
+<div class="container">
+<ul class="list-unstyled">
+    <% @posts.each do |p| %>
+    <li><h2><%= p.title %></h2></li>
+    <li><%= p.body %></li>
+    <li><%= link_to "Post URL", post_path(p), class: "btn btn-primary btn-xs" %></li>
+    <% end %>
+</ul>
+</div>
+<div class="container">
+    <%= link_to "Create Post", new_post_path, class: "btn btn-success btn-lg" %>
+</div>
